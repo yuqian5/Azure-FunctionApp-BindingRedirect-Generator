@@ -1,1 +1,0 @@
-# Azure-FunctionApp-BindingRedirect-Generator

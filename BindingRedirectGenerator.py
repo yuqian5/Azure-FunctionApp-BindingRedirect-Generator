@@ -41,11 +41,6 @@ if __name__ == '__main__':
     # get binding binding_redirects
     binding_redirects = getBindingRedirects(filenameInput)
 
-    # ask user if they want to ecape the output
-    escape = input('Escape output? (y/n): ')
-    if escape == 'y':
-        binding_redirects = [redirect.replace('"', '\\"') for redirect in binding_redirects]
-
     # write to file
     with open('GeneratedBindingRedirects.txt', 'w') as f:
         f.write('Individual Redirects:\n')
@@ -54,5 +49,16 @@ if __name__ == '__main__':
         f.write('\nArray:\n')
         f.write(f'[{",".join(binding_redirects)}]')
 
-    print(f'[{",".join(binding_redirects)}]')
+    # ask user if they want to ecape the output
+    escape = input('Generate escaped output? (y/n): ')
+    if escape == 'y':
+        binding_redirects = [redirect.replace('"', '\\"') for redirect in binding_redirects]
+
+    with open('GeneratedBindingRedirects_Escaped.txt', 'w') as f:
+        f.write('Individual Redirects:\n')
+        for redirect in binding_redirects:
+            f.write(redirect + '\n')
+        f.write('\nArray:\n')
+        f.write(f'[{",".join(binding_redirects)}]')
+
     print('Done')

@@ -1,0 +1,8 @@
+= Azure FunctionApp Binding Redirect Generator
+
+== Description
+This tool helps to quicly create binding redirects for Legacy Azure Function Apps running on .Net Framework.
+
+== Usage
+Run BindingRedirectGenerator.py and follow the prompts.
+
